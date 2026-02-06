@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b02d414b-6def-41aa-bfbb-e8afffa036f6" name="Changes" comment="feat: implement authentication system with login, registration, and user management" />
+    <list default="true" id="b02d414b-6def-41aa-bfbb-e8afffa036f6" name="Changes" comment="feat: update workspace configuration for authentication system integration">
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/RegisterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RegisterForm.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +70,7 @@
     "ignore_missing_gitignore": "true",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/wamp64/www/theland/frontend/src/actions",
+    "last_opened_file_path": "C:/wamp64/www/theland/frontend/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,13 +83,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\theland\frontend\src" />
       <recent name="C:\wamp64\www\theland\frontend\src\actions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\theland\frontend\src\app" />
+      <recent name="C:\wamp64\www\theland\frontend" />
       <recent name="C:\wamp64\www\theland\frontend\src" />
       <recent name="C:\wamp64\www\theland\frontend\src\components" />
       <recent name="C:\wamp64\www\theland\frontend\src\app\components" />
-      <recent name="C:\wamp64\www\theland" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -98,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1769780680308</updated>
       <workItem from="1769780681394" duration="6336000" />
-      <workItem from="1770382851916" duration="2846000" />
+      <workItem from="1770382851916" duration="5477000" />
     </task>
     <task id="LOCAL-00001" summary="feat:  init tea shop serveur">
       <option name="closed" value="true" />
@@ -116,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770386328139</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: update workspace configuration for authentication system integration">
+      <option name="closed" value="true" />
+      <created>1770386505767</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1770386505767</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,7 +144,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat:  init tea shop serveur" />
     <MESSAGE value="feat: implement authentication system with login, registration, and user management" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement authentication system with login, registration, and user management" />
+    <MESSAGE value="feat: update workspace configuration for authentication system integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update workspace configuration for authentication system integration" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

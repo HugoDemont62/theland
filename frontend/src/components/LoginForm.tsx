@@ -11,52 +11,89 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="w-full rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+      className="group relative w-full overflow-hidden rounded-xl bg-gradient-to-r from-teal-600 to-emerald-600 px-4 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50"
     >
-      {pending ? "Connexion en cours..." : "Se connecter"}
+      <span className="relative z-10 flex items-center justify-center gap-2">
+        {pending ? (
+          <>
+            <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent"></div>
+            Connexion en cours...
+          </>
+        ) : (
+          <>
+            Se connecter
+            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </>
+        )}
+      </span>
+      <div className="absolute inset-0 -z-0 bg-gradient-to-r from-teal-700 to-emerald-700 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
     </button>
   );
 }
 
 export default function LoginForm() {
-  const [state, formAction] = useFormState(login, { error: null });
+  const [state, formAction] = useFormState(login, { error: "" });
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
-      <div className="w-full max-w-md">
-        <div className="rounded-lg bg-white p-8 shadow-lg">
-          <h1 className="mb-6 text-center text-3xl font-bold text-gray-900">
-            Connexion
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 px-4">
+      {/* Motifs décoratifs avec animation pulse */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute left-20 top-40 h-64 w-64 animate-pulse rounded-full bg-teal-400 blur-3xl"></div>
+        <div className="absolute right-20 bottom-40 h-96 w-96 animate-pulse rounded-full bg-emerald-400 blur-3xl [animation-delay:1s]"></div>
+      </div>
+
+      <div className="relative z-10 w-full max-w-md">
+        {/* Logo au-dessus */}
+        <div className="mb-8 text-center">
+          <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 text-4xl shadow-2xl transition-transform duration-300 hover:scale-110 hover:rotate-12">
+            🍵
+          </div>
+          <h1 className="bg-gradient-to-r from-teal-700 via-emerald-600 to-teal-700 bg-clip-text text-4xl font-black text-transparent">
+            Thé Fada
           </h1>
+          <p className="text-sm italic text-emerald-600">Reconnexion à l'infusion</p>
+        </div>
+
+        {/* Formulaire */}
+        <div className="relative overflow-hidden rounded-2xl bg-white/90 p-8 shadow-2xl backdrop-blur-sm">
+          {/* Accent décoratif */}
+          <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-gradient-to-br from-teal-200 to-emerald-200 opacity-30 blur-2xl"></div>
+
+          <h2 className="relative mb-6 text-center text-2xl font-bold text-emerald-900">
+            Bon retour parmi nous ! 👋
+          </h2>
 
           {state?.error && (
-            <div className="mb-4 rounded-lg bg-red-50 p-4 text-red-700">
-              {state.error}
+            <div className="mb-6 animate-shake rounded-xl border-2 border-rose-200 bg-rose-50 p-4">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">⚠️</span>
+                <p className="font-medium text-rose-700">{state.error}</p>
+              </div>
             </div>
           )}
 
-          <form action={formAction} className="space-y-4">
+          <form action={formAction} className="space-y-5">
             <div>
               <label
                 htmlFor="email"
-                className="mb-2 block text-sm font-medium text-gray-700"
+                className="mb-2 block text-sm font-bold text-emerald-900"
               >
-                Email
+                Adresse email
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="votreemail@exemple.com"
+                className="w-full rounded-xl border-2 border-emerald-200 bg-white/50 px-4 py-3 font-medium text-emerald-900 backdrop-blur-sm transition-all duration-300 placeholder:text-emerald-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/20"
+                placeholder="ton-email@exemple.com"
               />
             </div>
 
             <div>
               <label
                 htmlFor="password"
-                className="mb-2 block text-sm font-medium text-gray-700"
+                className="mb-2 block text-sm font-bold text-emerald-900"
               >
                 Mot de passe
               </label>
@@ -65,7 +102,7 @@ export default function LoginForm() {
                 id="password"
                 name="password"
                 required
-                className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-xl border-2 border-emerald-200 bg-white/50 px-4 py-3 font-medium text-emerald-900 backdrop-blur-sm transition-all duration-300 placeholder:text-emerald-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/20"
                 placeholder="••••••••"
               />
             </div>
@@ -73,15 +110,23 @@ export default function LoginForm() {
             <SubmitButton />
           </form>
 
-          <p className="mt-6 text-center text-sm text-gray-600">
-            Pas encore de compte ?{" "}
-            <Link
-              href="/register"
-              className="font-medium text-blue-600 hover:text-blue-700"
-            >
-              Inscrivez-vous
-            </Link>
-          </p>
+          <div className="relative mt-8 text-center">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-emerald-200"></div>
+            </div>
+            <div className="relative">
+              <span className="bg-white px-4 text-sm text-emerald-600">
+                Nouveau sur Thé Fada ?
+              </span>
+            </div>
+          </div>
+
+          <Link
+            href="/register"
+            className="mt-6 block rounded-xl border-2 border-teal-600 bg-white/50 py-3 text-center font-bold text-teal-700 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:bg-teal-50"
+          >
+            Créer un compte gratuitement
+          </Link>
         </div>
       </div>
     </div>
