@@ -621,6 +621,106 @@ export interface ApiMovieMovie extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiRecommendedShopRecommendedShop
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'recommended_shops';
+  info: {
+    displayName: 'recommended-shop';
+    pluralName: 'recommended-shops';
+    singularName: 'recommended-shop';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::recommended-shop.recommended-shop'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTeaCategoryTeaCategory extends Struct.CollectionTypeSchema {
+  collectionName: 'tea_categories';
+  info: {
+    displayName: 'tea-category';
+    pluralName: 'tea-categories';
+    singularName: 'tea-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tea-category.tea-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'>;
+    tea: Schema.Attribute.Relation<'oneToOne', 'api::tea.tea'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTeaTea extends Struct.CollectionTypeSchema {
+  collectionName: 'teas';
+  info: {
+    displayName: 'tea';
+    pluralName: 'teas';
+    singularName: 'tea';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    brewingTime: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<3>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dosage: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'2-3g pour 250ml'>;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::tea.tea'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    shortDescription: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'name'>;
+    tea_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::tea-category.tea-category'
+    >;
+    temperature: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<70>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1137,6 +1237,9 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::movie.movie': ApiMovieMovie;
+      'api::recommended-shop.recommended-shop': ApiRecommendedShopRecommendedShop;
+      'api::tea-category.tea-category': ApiTeaCategoryTeaCategory;
+      'api::tea.tea': ApiTeaTea;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

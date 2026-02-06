@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tea_categories",
+  "info": {
+    "singularName": "tea-category",
+    "pluralName": "tea-categories",
+    "displayName": "tea-category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "description": {
+      "type": "text"
+    },
+    "tea": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tea.tea",
+      "mappedBy": "tea_category"
+    }
+  }
+}
