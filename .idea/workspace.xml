@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b02d414b-6def-41aa-bfbb-e8afffa036f6" name="Changes" comment="feat:  init tea shop serveur">
-      <change afterPath="$PROJECT_DIR$/frontend/src/actions/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/account/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/login/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/register/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/EditProfileForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/LoginForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/RegisterForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/extensions/documentation/documentation/1.0.0/full_documentation.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/extensions/documentation/documentation/1.0.0/full_documentation.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/page.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="b02d414b-6def-41aa-bfbb-e8afffa036f6" name="Changes" comment="feat: implement authentication system with login, registration, and user management" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,8 +77,8 @@
       <recent name="C:\wamp64\www\theland\frontend\src\actions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\theland\frontend\src\components" />
       <recent name="C:\wamp64\www\theland\frontend\src" />
+      <recent name="C:\wamp64\www\theland\frontend\src\components" />
       <recent name="C:\wamp64\www\theland\frontend\src\app\components" />
       <recent name="C:\wamp64\www\theland" />
     </key>
@@ -112,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1769780680308</updated>
       <workItem from="1769780681394" duration="6336000" />
-      <workItem from="1770382851916" duration="2714000" />
+      <workItem from="1770382851916" duration="2846000" />
     </task>
     <task id="LOCAL-00001" summary="feat:  init tea shop serveur">
       <option name="closed" value="true" />
@@ -122,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770383005539</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: implement authentication system with login, registration, and user management">
+      <option name="closed" value="true" />
+      <created>1770386328139</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1770386328139</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +124,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat:  init tea shop serveur" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:  init tea shop serveur" />
+    <MESSAGE value="feat: implement authentication system with login, registration, and user management" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implement authentication system with login, registration, and user management" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
