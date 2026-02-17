@@ -1,59 +1,74 @@
 import Link from "next/link";
 import { getUser, logout } from "@/actions/auth";
+import SearchBar from "./SearchBar";
 
 export default async function Header() {
   const user = await getUser();
 
   return (
-    <header className="relative border-b border-amber-200/50 bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 shadow-md">
-      <nav className="container relative z-10 mx-auto flex items-center justify-between px-6 py-5">
-        {/* Logo avec icône de théière */}
-        <Link href="/" className="group flex items-center gap-3 transition-all duration-300 hover:scale-105">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-emerald-600 text-2xl shadow-lg transition-transform group-hover:rotate-12">
-            🍵
+    <header className="sticky top-0 z-50 border-b border-tea-200/60 bg-cream/80 backdrop-blur-lg">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="group flex shrink-0 items-center gap-3 transition-opacity duration-200 hover:opacity-80"
+        >
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-tea-600 font-heading text-lg font-bold text-cream">
+            TF
           </div>
-          <div>
-            <h1 className="bg-gradient-to-r from-teal-700 via-emerald-600 to-teal-700 bg-clip-text text-3xl font-black tracking-tight text-transparent">
-              Thé Fada
+          <div className="hidden sm:block">
+            <h1 className="font-heading text-xl font-bold tracking-tight text-tea-800">
+              The Fada
             </h1>
-            <p className="text-xs italic text-emerald-600">L'infusion de la folie</p>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-tea-500">
+              L'infusion de la folie
+            </p>
           </div>
         </Link>
 
-        {/* Navigation */}
-        <div className="flex items-center gap-6">
-          <Link
-            href="/"
-            className="group relative overflow-hidden rounded-lg px-4 py-2 font-medium text-teal-700 transition-all duration-300 hover:text-teal-900"
-          >
-            <span className="relative z-10">Accueil</span>
-            <div className="absolute inset-0 -z-0 translate-y-full bg-gradient-to-r from-teal-100 to-emerald-100 transition-transform duration-300 group-hover:translate-y-0"></div>
-          </Link>
+        {/* Nav Links */}
+        <div className="hidden items-center gap-1 lg:flex">
+          {[
+            { href: "/", label: "Accueil" },
+            { href: "/collection", label: "Collection" },
+            { href: "/about", label: "Notre Histoire" },
+          ].map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-lg px-4 py-2 text-sm font-medium text-tea-700 transition-colors duration-200 hover:bg-tea-100 hover:text-tea-900"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Search + Auth */}
+        <div className="flex items-center gap-3">
+          <SearchBar />
 
           {user ? (
             <>
               <Link
                 href="/account"
-                className="group relative overflow-hidden rounded-lg px-4 py-2 font-medium text-teal-700 transition-all duration-300 hover:text-teal-900"
+                className="flex items-center gap-2 rounded-full bg-tea-100 px-4 py-2 transition-colors duration-200 hover:bg-tea-200"
               >
-                <span className="relative z-10">Mon Compte</span>
-                <div className="absolute inset-0 -z-0 translate-y-full bg-gradient-to-r from-teal-100 to-emerald-100 transition-transform duration-300 group-hover:translate-y-0"></div>
-              </Link>
-
-              <div className="flex items-center gap-2 rounded-full bg-white/60 px-4 py-2 shadow-sm backdrop-blur-sm">
-                <div className="h-2 w-2 animate-pulse rounded-full bg-emerald-500"></div>
-                <span className="text-sm font-medium text-emerald-800">
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-tea-600 text-xs font-bold text-cream">
+                  {user.username?.charAt(0).toUpperCase()}
+                </div>
+                <span className="hidden text-sm font-medium text-tea-800 sm:inline">
                   {user.username}
                 </span>
-              </div>
-
+              </Link>
               <form action={logout}>
                 <button
                   type="submit"
-                  className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-rose-500 to-pink-500 px-6 py-2.5 font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-tea-500 transition-colors duration-200 hover:bg-red-50 hover:text-red-600"
                 >
-                  <span className="relative z-10">Déconnexion</span>
-                  <div className="absolute inset-0 -z-0 bg-gradient-to-r from-rose-600 to-pink-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                  <span className="hidden sm:inline">Deconnexion</span>
+                  <svg className="h-4 w-4 sm:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                  </svg>
                 </button>
               </form>
             </>
@@ -61,15 +76,15 @@ export default async function Header() {
             <>
               <Link
                 href="/login"
-                className="rounded-lg border-2 border-teal-600 px-6 py-2.5 font-semibold text-teal-700 transition-all duration-300 hover:scale-105 hover:bg-teal-50"
+                className="hidden rounded-lg px-4 py-2 text-sm font-medium text-tea-700 transition-colors duration-200 hover:bg-tea-100 sm:block"
               >
                 Connexion
               </Link>
               <Link
                 href="/register"
-                className="rounded-lg bg-gradient-to-r from-teal-600 to-emerald-600 px-6 py-2.5 font-semibold text-white shadow-md transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="rounded-lg bg-tea-700 px-4 py-2 text-sm font-medium text-cream transition-all duration-200 hover:bg-tea-800"
               >
-                Inscription
+                S'inscrire
               </Link>
             </>
           )}

@@ -21,9 +21,9 @@
     },
     "tea_category": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::tea-category.tea-category",
-      "inversedBy": "tea"
+      "inversedBy": "teas"
     },
     "shortDescription": {
       "type": "string",

@@ -1,62 +1,61 @@
-import { strapi } from "@strapi/client";
-import type { API, Config } from "@strapi/client";
-import { draftMode } from "next/headers";
-import { spreadStrapiData } from "./spreadStrapiData";
+import type { API, Config } from '@strapi/client'
+import { strapi } from '@strapi/client'
+import { draftMode } from 'next/headers'
 
 export class StrapiError extends Error {
-  constructor(
+  constructor (
     message: string,
     public readonly contentType: string,
     public readonly cause?: unknown
   ) {
-    super(message);
-    this.name = "StrapiError";
+    super(message)
+    this.name = 'StrapiError'
   }
 }
 
 const createClient = (
-  config?: Omit<Config, "baseURL">,
+  config?: Omit<Config, 'baseURL'>,
   isDraftMode: boolean = false
 ) => {
   return strapi({
     auth: process.env.STRAPI_API_KEY,
-    baseURL: `${process.env.NEXT_PUBLIC_STRAPI_URL ?? ""}/api`,
+    baseURL: `${process.env.NEXT_PUBLIC_STRAPI_URL ?? ''}/api`,
     headers: {
-      "strapi-encode-source-maps": isDraftMode ? "true" : "false",
+      'strapi-encode-source-maps': isDraftMode ? 'true' : 'false',
       ...config?.headers,
     },
     ...config,
-  });
-};
+  })
+}
 
 /**
  * Fetches a collection type from Strapi.
  *
  * @throws {StrapiError} When the fetch fails
  */
-export async function fetchCollectionType<T = API.Document[]>(
+export async function fetchCollectionType<T = API.Document[]> (
   collectionName: string,
   options?: API.BaseQueryParams,
-  config?: Omit<Config, "baseURL">
+  config?: Omit<Config, 'baseURL'>
 ): Promise<T> {
-  const { isEnabled: isDraftMode } = await draftMode();
+  const {isEnabled: isDraftMode} = await draftMode()
 
   try {
-    const { data } = await createClient(config, isDraftMode)
+    const {data} = await createClient(config, isDraftMode)
       .collection(collectionName)
       .find({
         ...options,
-        populate: options?.populate ?? "*",
-        status: isDraftMode ? "draft" : "published",
-      });
+        populate: options?.populate ?? '*',
+        status: isDraftMode ? 'draft' : 'published',
+      })
 
-    return data as T;
+    return data as T
   } catch (error) {
     throw new StrapiError(
       `Failed to fetch collection "${collectionName}"`,
       collectionName,
       error
-    );
+    )
   }
 }
 
@@ -65,29 +64,29 @@ export async function fetchCollectionType<T = API.Document[]>(
  *
  * @throws {StrapiError} When the fetch fails
  */
-export async function fetchSingleType<T = API.Document>(
+export async function fetchSingleType<T = API.Document> (
   singleTypeName: string,
   options?: API.BaseQueryParams,
-  config?: Omit<Config, "baseURL">
+  config?: Omit<Config, 'baseURL'>
 ): Promise<T> {
-  const { isEnabled: isDraftMode } = await draftMode();
+  const {isEnabled: isDraftMode} = await draftMode()
 
   try {
-    const { data } = await createClient(config, isDraftMode)
+    const {data} = await createClient(config, isDraftMode)
       .single(singleTypeName)
       .find({
         ...options,
-        populate: options?.populate ?? "*",
-        status: isDraftMode ? "draft" : "published",
-      });
+        populate: options?.populate ?? '*',
+        status: isDraftMode ? 'draft' : 'published',
+      })
 
-    return data as T;
+    return data as T
   } catch (error) {
     throw new StrapiError(
       `Failed to fetch single type "${singleTypeName}"`,
       singleTypeName,
       error
-    );
+    )
   }
 }
 
@@ -96,28 +95,32 @@ export async function fetchSingleType<T = API.Document>(
  *
  * @throws {StrapiError} When the fetch fails
  */
-export async function fetchDocument<T = API.Document>(
+export async function fetchDocument<T = API.Document> (
   collectionName: string,
   documentId: string,
   options?: API.BaseQueryParams,
-  config?: Omit<Config, "baseURL">
+  config?: Omit<Config, 'baseURL'>
 ): Promise<T> {
-  const { isEnabled: isDraftMode } = await draftMode();
+  const {isEnabled: isDraftMode} = await draftMode()
 
   try {
-    const { data } = await createClient(config, isDraftMode)
+    const {data} = await createClient(config, isDraftMode)
       .collection(collectionName)
       .findOne(documentId, {
         ...options,
-        status: isDraftMode ? "draft" : "published",
-      });
+        status: isDraftMode ? 'draft' : 'published',
+      })
 
-    return data as T;
+    return data as T
   } catch (error) {
     throw new StrapiError(
       `Failed to fetch document "${documentId}" from "${collectionName}"`,
       collectionName,
       error
-    );
+    )
   }
+}
+
+export function fetchGlobal (globalName: string) {
+  
 }

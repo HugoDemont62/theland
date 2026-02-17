@@ -23,9 +23,9 @@
     "description": {
       "type": "text"
     },
-    "tea": {
+    "teas": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::tea.tea",
       "mappedBy": "tea_category"
     }

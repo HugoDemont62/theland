@@ -4,15 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b02d414b-6def-41aa-bfbb-e8afffa036f6" name="Changes" comment="feat: update workspace configuration for authentication system integration">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/tailwind.config.js" afterDir="false" />
+    <list default="true" id="b02d414b-6def-41aa-bfbb-e8afffa036f6" name="Changes" comment="feat: enhance UI components and styles for a better user experience">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/api/tea-category/content-types/tea-category/schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/api/tea-category/content-types/tea-category/schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/api/tea/content-types/tea/schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/api/tea/content-types/tea/schema.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/extensions/documentation/documentation/1.0.0/full_documentation.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/extensions/documentation/documentation/1.0.0/full_documentation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/types/generated/contentTypes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/types/generated/contentTypes.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/actions/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/actions/auth.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/account/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/EditProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/EditProfileForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoginForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/RegisterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RegisterForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/lib/strapi/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/lib/strapi/client.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +31,13 @@
     <persistenceIdMap>
       <entry key="_C:/wamp64/www/theland" value="38ynScuIjiPs18fS3mXPTTRy2Il" />
     </persistenceIdMap>
+  </component>
+  <component name="CopilotUserSelectedModel">
+    <selectedModels>
+      <entry key="edit-panel" value="GPT-5 mini" />
+      <entry key="chat-panel" value="GPT-5 mini" />
+      <entry key="agent-panel" value="GPT-5 mini" />
+    </selectedModels>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,6 +61,9 @@
     &quot;accountId&quot;: &quot;4cccfd44-db94-4a02-b76f-de954b94d53b&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/frontend/node_modules/@types/react/index.d.ts" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -58,29 +76,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "ignore_missing_gitignore": "true",
-    "javascript.preferred.runtime.type.id": "node",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/wamp64/www/theland/frontend/src",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\wamp64\\www\\theland\\Backend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/theland/frontend/src&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\wamp64\\www\\theland\\Backend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\theland\frontend\src" />
@@ -109,7 +127,12 @@
       <option name="presentableId" value="Default" />
       <updated>1769780680308</updated>
       <workItem from="1769780681394" duration="6336000" />
-      <workItem from="1770382851916" duration="5477000" />
+      <workItem from="1770382851916" duration="6279000" />
+      <workItem from="1770391443190" duration="784000" />
+      <workItem from="1770392253466" duration="2532000" />
+      <workItem from="1770969629650" duration="644000" />
+      <workItem from="1770970329752" duration="918000" />
+      <workItem from="1771349257976" duration="7385000" />
     </task>
     <task id="LOCAL-00001" summary="feat:  init tea shop serveur">
       <option name="closed" value="true" />
@@ -135,7 +158,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770386505767</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: enhance UI components and styles for a better user experience">
+      <option name="closed" value="true" />
+      <created>1770389133407</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1770389133407</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +176,8 @@
     <MESSAGE value="feat:  init tea shop serveur" />
     <MESSAGE value="feat: implement authentication system with login, registration, and user management" />
     <MESSAGE value="feat: update workspace configuration for authentication system integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update workspace configuration for authentication system integration" />
+    <MESSAGE value="feat: enhance UI components and styles for a better user experience" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: enhance UI components and styles for a better user experience" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
